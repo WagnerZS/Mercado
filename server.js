@@ -8,7 +8,7 @@ const PORT = 3001;
 const MONGO_URI = process.env.MONGO_URI;
 
 app.use(cors({
-  origin: 'https://WagnerZS.github.io'
+  origin: 'https://wagnerzs.github.io'
 }));
 app.use(express.json());
 
