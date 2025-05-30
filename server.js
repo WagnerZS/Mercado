@@ -26,7 +26,7 @@ mongoose.connect(MONGO_URI)
 
 // GET /tasks - retorna todas as tarefas, mais recentes primeiro
 app.get('/tasks', async (req, res) => {
-  const tasks = await Task.find().sort({ _id: -1 }); // Mais recente primeiro
+  const tasks = await Task.find().sort({ title: 1 }); // Ordem alfabética por título
   res.json(tasks);
 });
 
