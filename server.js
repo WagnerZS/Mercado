@@ -56,6 +56,12 @@ app.delete('/tasks/:id', async (req, res) => {
   res.json({ status: 'deleted', id });
 });
 
+// DELETE /tasks - remove todas as tarefas
+app.delete('/tasks', async (req, res) => {
+  await Task.deleteMany({});
+  res.json({ status: 'deleted_all' });
+});
+
 app.listen(PORT, '0.0.0.0', () => {
   //console.log(`Server running on http://localhost:${PORT}`);
 });

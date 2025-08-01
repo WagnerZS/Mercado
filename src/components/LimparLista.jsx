@@ -3,11 +3,16 @@ import { useState } from "react";
 export function LimparLista({ setTasks }) {
   const [showConfirm, setShowConfirm] = useState(false);
 
+  const API_URL = 'https://mercado-6kjn.onrender.com/tasks';
+
   const handleClick = () => {
     setShowConfirm(true);
   };
 
-  const handleConfirm = () => {
+  const handleConfirm = async () => {
+    // Remove todas as tarefas no backend
+    await fetch(API_URL, { method: 'DELETE' });
+    // Limpa a lista no frontend
     setTasks([]);
     setShowConfirm(false);
   };

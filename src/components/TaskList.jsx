@@ -260,7 +260,6 @@ export function TaskList({ tasks, setTasks, tempTask, setTempTask }) {
                           ref={inputRef}
                           className="flex-1 px-2 py-1 border rounded outline-none text-sm sm:text-base"
                           value={task.title}
-                          maxLength={50}
                           onChange={e => {
                             setTempTask({ ...task, title: e.target.value });
                             setTasks(prev =>
